@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Analyse système</title>
+<style>
+body {
+background-color: black;
+color: lime;
+font-family: 'Courier New', monospace;
+text-align: center;
+padding-top: 50px;
+}
+
+.scan-line {
+margin: 10px auto;
+width: 60%;
+height: 20px;
+background: repeating-linear-gradient(90deg, lime 0px, lime 10px, black 10px, black 20px);
+animation: scan 1s infinite linear;
+}
+
+@keyframes scan {
+0% { background-position: 0 0; }
+100% { background-position: 100% 0; }
+}
+
+#message {
+margin-top: 30px;
+font-size: 1.2em;
+}
+</style>
+</head>
+<body>
+
+<audio autoplay>
+<source src="https://www.soundjay.com/button/beep-07.mp3" type="audio/mpeg">
+Votre navigateur ne supporte pas l'audio.
+</audio>
+
+<h1>Analyse de sécurité en cours...</h1>
+<div class="scan-line"></div>
+<div class="scan-line"></div>
+<div class="scan-line"></div>
+
+<p id="message">Fichiers système en cours d’analyse...<br>Veuillez patienter...</p>
+
+<script>
+setTimeout(() => {
+document.getElementById("message").innerHTML = "Virus détectés : 4<br>Système compromis.";
+}, 4000);
+
+setTimeout(() => {
+window.location.href = "conseils-cyber.html";
+}, 8000);
+</script>
+
+</body>
+</html>
